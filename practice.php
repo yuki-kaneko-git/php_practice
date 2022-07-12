@@ -155,8 +155,9 @@ $a = $_COOKIE[""] で特定のクッキーの値を調べる（クッキーは�
 <html>
     <head><title>PHP TEST</title></head>
     <body>
-        <p>クラス</p>
+        <p>★クラスの単元です</p>
         <?php
+        // メンバ変数とメンバメソッド
             $tv = new Television();
             $tv->channnelNo = 8;
             $tv->dispChannnel();
@@ -172,3 +173,24 @@ $a = $_COOKIE[""] で特定のクッキーの値を調べる（クッキーは�
     </body>
 </html>
 
+<html>
+    <head><title>PHP TEST</title></head>
+    <body>
+        <?php
+        //引数あり
+            $tv = new Television2();
+            $tv->setChannel(5);
+
+            class Television2{
+                public $channelNo;
+                function dispChannel(){
+                    print('現在のチャンネルは'.$this->channelNo);
+                }
+                function setChannel($channel){
+                    $this->channelNo = $channel;
+                    $this->dispChannel();
+                }
+            }
+        ?>
+    </body>
+</html>
